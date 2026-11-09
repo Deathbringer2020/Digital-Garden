@@ -1,0 +1,24 @@
+{
+  "/": [
+    "Leveling Plugin",
+    "Beginner Guide",
+    "Starting Stats",
+    "Upgrade Trees",
+    "Skills and Skill Points",
+    "Custom Potion Brewing",
+    "PvP and Death Penalty",
+    "Skills"
+  ],
+  "/Skills": [
+    "Brewing Skill",
+    "Classes",
+    "Combat Skill",
+    "Defense Skill",
+    "Enchanting Skill",
+    "Farming Skill",
+    "Fishing Skill",
+    "Inventory Skill",
+    "Mining Skill",
+    "Movement Skill"
+  ]
+}
