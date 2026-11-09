@@ -16,8 +16,8 @@ Vanilla potions stop at level II. With the [[Skills/Brewing Skill\|Brewing Skill
 
 Fuel isn't used by custom brews. As soon as everything is in place you'll see **`Started Brewing`**. When it's done: **`Finished Brewing`**, the three bottles are replaced, the ingredients and XP levels are taken, and you get 20 Brewing XP. If you take out the ingredient or change the potions mid-brew, you'll see **`Stopped Brewing`**.
 
-> [!WARNING]
-> Requirements are checked again when the brew **finishes**. If you spent your XP levels or the ingredient stack got too small in the meantime, the brew silently fails.
+> [!TIP]
+> Keep your XP levels and the ingredient stack until the brew **finishes**. That's when they're taken. If one runs short, nothing happens. Take the ingredient out and put it back in to start again.
 
 ## Raising the level
 
@@ -68,4 +68,4 @@ Only players with **enough Brewing upgrades themselves**. If a custom potion's l
 Vanilla potions (Speed II, Fire Resistance 8:00, …) can always be used by everyone.
 
 ---
-Related: [[Skills/Brewing Skill\|Brewing Skill]] · [[Skills/Defense Skill\|Defense Skill]] · [[Known Issues\|Known Issues]]
+Related: [[Skills/Brewing Skill\|Brewing Skill]] · [[Upgrade Trees\|Upgrade Trees]] · [[Skills/Defense Skill\|Defense Skill]]

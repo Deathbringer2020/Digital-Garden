@@ -14,65 +14,77 @@
 
 How it changes the game:
 
-- **Progression matters again.** Armor, the Elytra, inventory space and even your base walking speed have to be earned. See [[Starting Stats\|Starting Stats]].
-- **You build your own character.** Ten skill trees and four combat [[Skills/Classes\|Classes]] let you build a tank, a glass-cannon archer, a bare-fisted brawler or a speedy explorer.
-- **PvP has stakes.** Killing a player steals their Combat XP, and the shown Combat Level under every name tag lets you judge a fight. See [[PvP and Death Penalty\|PvP and Death Penalty]].
-- **Brewing goes beyond vanilla.** Brew Speed III+, Strength IV, Regeneration V and longer potions with the [[Custom Potion Brewing\|Custom Potion Brewing]] system.
-- **Upgrades can be reset for free at any time**, so experimenting is safe.
+- **Progression matters again.** Armor, the Elytra, inventory space and even your walking speed have to be earned. See [[Starting Stats\|Starting Stats]].
+- **You build your own character.** Ten skill trees and four combat [[Skills/Classes\|Classes]] let you build a tank, an archer, a bare-fisted brawler or a speedy explorer. Your **first class is free** and you can pick it the moment you join.
+- **PvP has stakes.** Killing a player steals their Combat XP, and the Combat Level under every name tag lets you judge a fight. See [[PvP and Death Penalty\|PvP and Death Penalty]].
+- **Brewing goes beyond vanilla.** Brew Speed III+, Strength IV, Regeneration V and longer potions. See [[Custom Potion Brewing\|Custom Potion Brewing]].
+- **Resetting is free.** Every tree can be refunded at any time, so experimenting is safe.
 
 ## 2. Obsidian Tags
 
-`#plugin` `#minecraft` `#guide` `#leveling` `#rpg` `#skills` `#pvp` `#brewing` `#classes` `#admin` `#commands`
-
-Every note in this vault has these tags in its frontmatter, so you can filter by `#guide` (player notes) or `#admin` (server notes).
+`#plugin` `#minecraft` `#guide` `#leveling` `#rpg` `#skills` `#pvp` `#brewing` `#classes` `#upgrades`
 
 ## 3. Commands
 
-| Command | Permission | Description & Syntax | Example |
+| Command | Who | Description & Syntax | Example |
 |---|---|---|---|
-| `/menu` | Everyone | Opens the Leveling menu with all your skills, levels and XP. Click a skill to open its upgrade tree. | `/menu` |
-| `/menuothers` | Server operator (OP) | Shows another online player's skill overview (view only). Syntax: `/menuothers <player>` | `/menuothers Steve` |
-| `/setlevel` | Server operator (OP) | Sets a player's level in one skill, optionally with XP. Syntax: `/setlevel <player> <skill> <level> [xp]` | `/setlevel Steve mining 15 40` |
+| `/menu` | Everyone | Opens your Leveling menu with all skills, levels and XP. **Left-click** a skill to open its upgrade tree, then click an upgrade to buy it. | `/menu` |
 
-Full details, valid skill names and pitfalls: [[Commands\|Commands]] · Who may use what: [[Permissions\|Permissions]]
+That's the only command you need. Everything else happens by playing.
 
 ## 4. Gameplay Mechanics & Features
 
-### The core loop (step by step)
+### The core loop
 
-1. **Do things** → earn XP in the matching skill. See the XP table in [[Skills and Skill Points\|Skills and Skill Points]].
-2. **Level up** → you get a chat message (`Mining Level 3 Reached`) and **+1 skill point** in that skill.
-3. **Every skill level also gives 1 Classes XP.** Every 10 skill levels across all skills give you **1 Class point**. See [[Skills/Classes\|Classes]].
-4. **Open `/menu`** → click a skill icon → click an upgrade to buy it with that skill's points.
-5. **Change your mind?** The iron door in every tree resets that tree and refunds all its points.
+```mermaid
+flowchart LR
+    A["🎮 Play<br/>mine, fight, walk,<br/>craft, fish, brew …"] --> B["✨ Skill XP"]
+    B --> C["⬆️ Skill level up"]
+    C --> D["🔹 +1 skill point<br/>for that skill"]
+    D --> E["🛒 Buy upgrades<br/>in /menu"]
+    E --> A
+    C --> F["🎓 +1 Classes XP"]
+    F -->|"every 10 skill levels"| G["⭐ +1 Class point"]
+    G --> H["Upgrade your Class"]
+```
+
+1. **Do things** → earn XP in the matching skill. See [[Skills and Skill Points\|Skills and Skill Points]].
+2. **Level up** → chat shows `Mining Level 3 Reached` and you get **+1 point** for that skill.
+3. **Each skill level also gives 1 Classes XP**, so every 10 skill levels give **1 Class point**. See [[Skills/Classes\|Classes]].
+4. **Open `/menu`** → click a skill → click an upgrade.
+5. **Change your mind?** The iron door in every tree refunds all its points.
+
+All trees on one page: **[[Upgrade Trees\|Upgrade Trees]]**
 
 ### Skill trees
 
-| Skill | Menu icon | What you get | Note |
+| Skill | Menu icon | What you unlock | Note |
 |---|---|---|---|
-| Classes | Player head | Tank, Melee, Bare-Handed, Ranged multipliers | [[Skills/Classes\|Classes]] |
-| Combat | Iron sword | Attack damage, attack speed, knockback, bow & fist damage | [[Skills/Combat Skill\|Combat Skill]] |
+| Classes | Player head | Tank, Melee, Bare-Handed, Ranged | [[Skills/Classes\|Classes]] |
+| Combat | Iron sword | Damage, attack speed, knockback, bow & fist damage | [[Skills/Combat Skill\|Combat Skill]] |
 | Mining | Iron pickaxe | Mining speed, ore luck, **armor tiers** | [[Skills/Mining Skill\|Mining Skill]] |
 | Defense | Shield | Max HP, armor, toughness, regeneration | [[Skills/Defense Skill\|Defense Skill]] |
-| Inventory | Chest | **Unlock inventory slots** | [[Skills/Inventory Skill\|Inventory Skill]] |
-| Movement | Leather boots | Walking speed, **Elytra unlock** | [[Skills/Movement Skill\|Movement Skill]] |
-| Enchanting | Enchanting table | Revive, dodge chance, more vanilla XP | [[Skills/Enchanting Skill\|Enchanting Skill]] |
+| Inventory | Chest | **Inventory slots** | [[Skills/Inventory Skill\|Inventory Skill]] |
+| Movement | Leather boots | Walking speed, **Elytra** | [[Skills/Movement Skill\|Movement Skill]] |
+| Enchanting | Enchanting table | Revive, dodge, more vanilla XP | [[Skills/Enchanting Skill\|Enchanting Skill]] |
 | Brewing | Potion | Fire safety, stronger & longer potions | [[Skills/Brewing Skill\|Brewing Skill]] |
 | Farmer | Diamond hoe | Crop luck, buffed wolf pets | [[Skills/Farming Skill\|Farming Skill]] |
 | Fishing | Fishing rod | Fishing luck, oxygen, underwater mining | [[Skills/Fishing Skill\|Fishing Skill]] |
 
 ### Special systems
 
-- [[Starting Stats\|Starting Stats]]: what is weaker than vanilla and how you get it back
-- [[PvP and Death Penalty\|PvP and Death Penalty]]: XP stealing, the "frozen" state after losing levels, Revive
-- [[Custom Potion Brewing\|Custom Potion Brewing]]: brewing potions above vanilla levels
-- Combat Level display: every player's Combat level is shown under their name tag
+- [[Starting Stats\|Starting Stats]]: what's weaker than vanilla and how you win it back
+- [[PvP and Death Penalty\|PvP and Death Penalty]]: XP stealing, the frozen state after losing levels, Revive
+- [[Custom Potion Brewing\|Custom Potion Brewing]]: potions above vanilla level
+- **Combat Level display:** every player's Combat level is shown under their name tag
 
-## 5. Configuration Options
+## 5. Your Options & Settings
 
-The plugin has **no config file to edit**. All balancing values are built in. Player progress is saved with each player's own data. Tamed wolf pets are tracked in `plugins/Leveling/pets.yml`.
-
-The full list of built-in values (XP curves, caps, costs) and the scoreboards the plugin creates: [[Configuration\|Configuration]]. Behaviour admins should know about before going live: [[Known Issues\|Known Issues]].
+| Option | Where | What it does |
+|---|---|---|
+| **Reset a tree** | Iron door in every tree | Refunds all points of that tree, free, any time |
+| **Health Scaling** | Defense tree, lime glazed terracotta | Changes how many hearts are *shown*. Left-click +20, right-click −20, lowest setting = off. Purely visual |
+| **Remove upgrades** | Opens automatically via `/menu` when you're in skill debt | Give back points after losing Combat levels. See [[PvP and Death Penalty\|PvP and Death Penalty]] |
 
 ---
-Related: [[Beginner Guide\|Beginner Guide]] · [[Skills and Skill Points\|Skills and Skill Points]] · [[Commands\|Commands]] · [[Permissions\|Permissions]] · [[Configuration\|Configuration]]
+Related: [[Beginner Guide\|Beginner Guide]] · [[Upgrade Trees\|Upgrade Trees]] · [[Skills and Skill Points\|Skills and Skill Points]] · [[Skills/Classes\|Classes]]
